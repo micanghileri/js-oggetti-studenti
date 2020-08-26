@@ -61,4 +61,20 @@ $(document).ready(function(){
     // 5- Dare la possibilità all’utente attraverso 3 prompt di aggiungere
     // un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
     // Usate prima i console.log e poi provare a stampare con jQuery.
+
+    var nomeStudente = prompt("Inserisci il nome dello studente: ");
+	var cognomeStudente = prompt("Inserisci il cognome dello studente: ");
+	var etaStudente = prompt("Inserisci l'età dello studente: ");
+
+	studentiClasse.push({
+		"nome": nomeStudente,
+		"cognome": cognomeStudente,
+		"eta": etaStudente
+	});
+
+    for (var i = 0; i < studentiClasse.length; i++){
+        for (var key in studentiClasse[i]) {
+            console.log(`${key}: ${studentiClasse[i][key]}`);
+        }
+    }
 });
