@@ -64,17 +64,25 @@ $(document).ready(function(){
 
     var nomeStudente = prompt("Inserisci il nome dello studente: ");
 	var cognomeStudente = prompt("Inserisci il cognome dello studente: ");
-	var etaStudente = prompt("Inserisci l'età dello studente: ");
+	var etaStudente = parseInt(prompt("Inserisci l'età dello studente: "));
 
-	studentiClasse.push({
-		"nome": nomeStudente,
-		"cognome": cognomeStudente,
-		"eta": etaStudente
-	});
+    // for (var i = 0; i < studentiClasse.length; i++){
+    //     for (var key in studentiClasse[i]) {
+    //         console.log(`${key}: ${studentiClasse[i][key]}`);
+    //     }
+    // }
+
+    var nuovoStudente = {
+        "nome": nomeStudente,
+        "cognome": cognomeStudente,
+        "eta": etaStudente
+    }
+
+    studentiClasse.push(nuovoStudente);
 
     for (var i = 0; i < studentiClasse.length; i++){
-        for (var key in studentiClasse[i]) {
-            console.log(`${key}: ${studentiClasse[i][key]}`);
+        for (var key in studentiClasse[i]){
+            $("#lista-studenti").append('<li>' + key + ': ' + studentiClasse[i][key] + '</li>');
         }
     }
 });
